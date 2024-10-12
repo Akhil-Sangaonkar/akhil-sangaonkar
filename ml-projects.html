@@ -6,67 +6,80 @@
     <title>Akhil Prakash Shenvi Sangaonkar - ML Projects</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #000; /* Black background for the entire body */
-            color: white; /* White text for readability */
-        }
+        
+    body {
+        background-color: #000; /* Black background for the entire body */
+        color: white; /* White text for readability */
+    }
 
-        .navbar-dark .navbar-brand, .navbar-dark .nav-link {
-            color: white; /* White links in navbar */
-        }
+    .navbar-dark .navbar-brand, .navbar-dark .nav-link {
+        color: white; /* White links in navbar */
+    }
 
-        footer {
-            background-color:#222; /* Dark footer for contrast */
-        }
+    footer {
+        background-color: #222; /* Dark footer for contrast */
+    }
 
-        a {
-            color: white; /* White links */
-        }
+    a {
+        color: white; /* White links */
+    }
 
-        a:hover {
-            color: #fbfdfe; /* Light color on hover */
-        }
+    a:hover {
+        color: #fbfdfe; /* Light color on hover */
+    }
 
-        .accordion-button {
-            background-color: #000000; /* Dark background for accordion buttons */
-            color: white !important; /* White text for accordion buttons */
-            border: none;
-            width: 100%;
-            text-align: left;
-            padding: 10px 15px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    .accordion-button {
+        background-color: #000000; /* Dark background for accordion buttons */
+        color: white !important; /* White text for accordion buttons */
+        border: none;
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-        .accordion-button:not(.collapsed) {
-            background-color: #000000; /* Black background when expanded */
-            color: white !important; /* White text when expanded */
-        }
+    .accordion-button:not(.collapsed) {
+        background-color: #000000; /* Black background when expanded */
+        color: white !important; /* White text when expanded */
+    }
 
-        .accordion-button:hover, .accordion-button:focus {
-            color: #fbfdfe !important; /* Light color on hover for accordion buttons */
-        }
+    .accordion-button:hover, .accordion-button:focus {
+        color: #fbfdfe !important; /* Light color on hover for accordion buttons */
+        color: #00bcd4; 
+    }
 
-        img.project-img {
-            max-width: 100%; /* Responsive image */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 10px; /* Rounded corners */
-            margin-bottom: 20px; /* Spacing below images */
-        }
+    img.project-img {
+        max-width: 100%; /* Responsive image */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 10px; /* Rounded corners */
+        margin-bottom: 20px; /* Spacing below images */
+    }
 
-        .card {
-            background-color: #000000; /* Dark background for cards */
-            border: none; /* Remove border from cards */
-        }
+    .card {
+        background-color: #000000; /* Dark background for cards */
+        border: none; /* Remove border from cards */
+    }
 
-        .table-dark {
-            background-color: #333; /* Dark background for tables */
-        }
+    .table-dark {
+        background-color: #333; /* Dark background for tables */
+    }
 
-        .table-dark th, .table-dark td {
-            color: white; /* White text for table headers and cells */
-        }
+    .table-dark th, .table-dark td {
+        color: white; /* White text for table headers and cells */
+    }
+
+    /* Styles for the accordion icon rotation */
+    .accordion-button i {
+        transition: transform 0.3s ease; /* Smooth rotation */
+    }
+    .accordion-button[aria-expanded="true"] i {
+        transform: rotate(180deg); /* Rotate arrow when expanded */
+    }
+
+
+        
     </style>
 </head>
 <body>
@@ -105,7 +118,7 @@
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
                         <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            <span style="font-size: 28px; font-weight: bold;">Optimizing Reallocation: Classifiers Driving Fraud Detection Efficiency</span>
+                            <span style="font-size: 25px; font-weight: bold;">Optimizing Reallocation: Classifiers Driving Fraud Detection Efficiency (Click to expand)</span>
                         </button>
                     </h2>
                 </div>

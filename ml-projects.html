@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Prakash Shenvi Sangaonkar - ML Projects</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000; /* Black background for the entire body */
+            color: white; /* White text for readability */
+        }
+
+        .navbar-dark .navbar-brand, .navbar-dark .nav-link {
+            color: white; /* White links in navbar */
+        }
+
+        footer {
+            background-color:#222; /* Dark footer for contrast */
+        }
+
+        a {
+            color: white; /* White links */
+        }
+
+        a:hover {
+            color: #fbfdfe; /* Light color on hover */
+        }
+
+        .accordion-button {
+            background-color: #000000; /* Dark background for accordion buttons */
+            color: white !important; /* White text for accordion buttons */
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #000000; /* Black background when expanded */
+            color: white !important; /* White text when expanded */
+        }
+
+        .accordion-button:hover, .accordion-button:focus {
+            color: #fbfdfe !important; /* Light color on hover for accordion buttons */
+        }
+
+        img.project-img {
+            max-width: 100%; /* Responsive image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Rounded corners */
+            margin-bottom: 20px; /* Spacing below images */
+        }
+
+        .card {
+            background-color: #000000; /* Dark background for cards */
+            border: none; /* Remove border from cards */
+        }
+
+        .table-dark {
+            background-color: #333; /* Dark background for tables */
+        }
+
+        .table-dark th, .table-dark td {
+            color: white; /* White text for table headers and cells */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Akhil Prakash Shenvi Sangaonkar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resume.html">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ml-projects.html">ML Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="photography.html">Photography</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ML Projects Section -->
+    <section id="ml-projects" class="container">
+        <h2 class="text-center">Machine Learning Projects</h2>
+
+        <div class="accordion" id="projectsAccordion">
+            <!-- Project 1 -->
+            <div class="card mb-3">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <span style="font-size: 28px; font-weight: bold;">Optimizing Reallocation: Classifiers Driving Fraud Detection Efficiency</span>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#projectsAccordion">
+                    <div class="card-body">
+                        <h3>1. Introduction</h3>
+                        <p>This project focuses on predicting whether an applicant is approved for a loan. By employing a systematic approach, the project aims to uncover patterns and insights from the data.</p>
+
+                        <p>   Initial exploratory data analysis (EDA) will provide an understanding of the dataset's structure, identify missing values, and visualize key features. Following this, several baseline machine learning models will be trained to determine which one achieves the best performance based on the Area Under the Curve (AUC) metric on the test set.</p>
+                            
+                        <p>   To further improve the model's predictive capabilities, Principal Component Analysis (PCA) will be applied to reduce dimensionality and reveal underlying patterns. Additionally, clustering analysis will be conducted using the PCA components to gain insights into data distribution and potential groupings of applicants.</p>
+                            
+                        <p>   Finally, the project will explore how the model operates within the latent space, interpreting its decision-making process and the importance of various features. Through this approach, the project aims to enhance the predictability of loan approvals while shedding light on the factors influencing applicants' success rates.</p>
+                        
+                        <h3>2. Exploratory Data Analysis (EDA)</h3>
+                        <p>In this phase, we analyze the dataset to understand the distribution of variables, identify patterns, and uncover any potential anomalies. This helps in informing feature engineering and model selection.</p>
+                        
+                        <!-- PNG Image for Project 1 -->
+                        <h4>2.1 Distribution of target feature</h4>
+                        <p>The first step in the exploratory data analysis is to examine the distribution of the target variable, loan status, which is a binary classification indicating whether an applicant is approved for a loan. The analysis reveals that approximately 85% of the applicants have not been approved for a loan, suggesting a significant class imbalance in the dataset.</p>
+
+                        <img src="images/project1/1.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+                        <h4>2.2 Correlation between the features</h4>
+                        <p>In analyzing the correlation between features, most exhibited very low correlations, with values close to zero, indicating weak or no linear relationships among them. However, two features, loan int rate and loan percent income, demonstrated a negative but very weak correlation with person income and person emp length, respectively, suggesting an inverse relationship. Conversely, person age and cb person cred hist length showed a very strong positive correlation, implying a significant linear relationship between these two variables. Additionally, loan amount and loan percent income exhibited a positive relationship, indicating that as one increases, the other tends to increase as well.</p>
+                        <img src="images/project1/2.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+                        <h4>2.3 Pair Plot</h4>
+                        <p>The pair plot analysis revealed two key insights. Firstly, individuals with high income were almost certain to be rejected for a loan, indicating a potential bias in the loan approval process. Secondly, the relationship between person income and loan amount exhibited a hyperbolic relation, suggesting that as income increases, the amount of loan requested follows a constant ratio, reflecting a non-linear interaction between the two variables. Additionally, several anomalies were detected, including individuals with ages above 100 and employment lengths exceeding 100 years, which are highly improbable. These outlier data points will be removed from the dataset to ensure more accurate analysis.</p>
+                        <img src="images/project1/5.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
+                        <h4>2.4 Distribution of Numerical Features across training and testing data</h4>
+                        <p>The histogram distribution revealed a nearly identical distribution of numerical features between the training and testing datasets. Notably, there were a few individuals paying a higher loan percentage relative to their income in both datasets. By observing the distribution of cb person cred hist length, it would be sensible to create a categorical column, classifying it into three categories: short, medium, and long</p>
+                        <img src="images/project1/4.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+                        <h4>2.5 Distribution of Categorical Features across training and testing data</h4>
+                        <p>The distribution of categorical features between the training and testing datasets was almost identical. Additionally, an age category column was created by observing the numerical distribution of the person age column, allowing for a more nuanced analysis of age-related trends in the data.</p>
+                        <img src="images/project1/3.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
+              
+
+
+
+
+
+
+                        <h3>3. Model Training</h3>
+
+                        <p>The performance of various classifiers was assessed based on accuracy and AUC metrics for both training and testing datasets. Among the classifiers, XGBoost achieved the highest training accuracy (96.64%) and training AUC (98.89%), indicating strong predictive power on the training set. However, it showed a slight drop in test accuracy (95.05%) and test AUC (95.26%), which may suggest some level of overfitting. LightGBM and CatBoost also demonstrated robust performance, with test accuracies of 95.23% and 95.15%, respectively. Notably, Gradient Boosting had the lowest performance across all metrics, suggesting it may not be as well-suited for this dataset compared to the other models. Overall, the results indicate that while all models performed well, LightGBM showed competitive performance with the best test AUC. Based on this metric, we will retrain LightGBM and further analyze its behavior in the latent space generated using PCA.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Classifier</th>
+                                    <th>Train Accuracy</th>
+                                    <th>Test Accuracy</th>
+                                    <th>Train AUC</th>
+                                    <th>Test AUC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>LightGBM</td>
+                                    <td>0.955321</td>
+                                    <td>0.952311</td>
+                                    <td>0.976871</td>
+                                    <td>0.956872</td>
+                                </tr>
+                                <tr>
+                                    <td>CatBoost</td>
+                                    <td>0.960899</td>
+                                    <td>0.951515</td>
+                                    <td>0.976088</td>
+                                    <td>0.953927</td>
+                                </tr>
+                                <tr>
+                                    <td>XGBoost</td>
+                                    <td>0.966430</td>
+                                    <td>0.950549</td>
+                                    <td>0.988919</td>
+                                    <td>0.952626</td>
+                                </tr>
+                                <tr>
+                                    <td>Gradient Boosting</td>
+                                    <td>0.946697</td>
+                                    <td>0.946342</td>
+                                    <td>0.943244</td>
+                                    <td>0.939988</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <style>
+                            table {
+                                width: 100%;
+                                border-collapse: collapse;
+                            }
+                            th, td {
+                                border: 1px solid #ddd;
+                                padding: 8px;
+                                text-align: left;
+                            }
+                            th {
+                                background-color: #0e0d0d;
+                            }
+                           
+                        </style>
+                        
+                        
+                        <h3>4. Dimensionality Reduction</h3>
+                        <p>In this section, we will utilize Principal Component Analysis (PCA) as a dimensionality reduction technique to generate a latent space for our dataset. This approach allows us to reduce the dimensionality of the data while preserving as much variance as possible. Upon observing the distribution of the training data, test data, and final test data in this latent space, we note that all three datasets exhibit similar distributions, along with some outliers. Additionally, five distinct clusters can be identified within the data. We will analyze the characteristics of these clusters in the next section.</p>                        
+                        <img src="images/project1/6.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
+                        <h3>5. Model Behaviour in Latent Space</h3>
+                        <p>In this section, we will observe the regions in the latent space where the model fails to accurately predict outcomes, identifying specific areas of misclassification. Additionally, we will analyze the true positives, true negatives, false positives, and false negatives within this latent space to gain a deeper understanding of the model's performance and its behavior regarding different prediction scenarios. This analysis will help us refine the model and improve its predictive capabilities.</p>
+                        <h4>5.1 True Observation VS Predicted </h4>
+                        <p>In this analysis, we clearly observe that the model struggles to accurately predict outcomes in the region where the PCA values on the y-axis are greater than 0. This indicates a potential area of concern where the model may be misclassifying instances</p>
+                        <img src="images/project1/7.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
+                        <h4>5.2 Assessment of Classification Outcomes</h4>
+                        <p>In this assessment, we observe that the model's predictions are highly accurate in the region where x is greater than 2 in the latent space. Conversely, most data points are densely packed in the region where x is less than -0.5, which corresponds to a higher incidence of misclassifications. This observation highlights a critical area where the model's performance can be improved, suggesting a need for further analysis and potential refinement of the model in this densely populated region.</p>
+                        <img src="images/project1/8.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
+
+                        <h3>6. Clustering Analysis</h3>
+                        <p>In this section, we aimed to understand the nature of the identified clusters and the basis for their grouping. Through data analysis and manual clustering, we identified five distinct clusters formed based on two categorical features: cred hist length cat and age category. The following figure illustrates how each category fits into these clusters, providing insight into the characteristics that define each group.</p>                       
+                        <img src="images/project1/9.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
+                        <h3>7. Enhancing Model Performance through Data Reallocation and Final Results</h3>
+                        <p>Building on the insights from 5.2 Assessment of Classification Outcomes, we recognize that many misclassified data points are concentrated in the densely populated region where x is less than -0.5. To enhance the model's performance, we will reallocate 50% of these misclassified data points from the test set to the training set. This strategic move aims to provide the model with additional examples of these challenging cases, allowing it to learn from them effectively. By incorporating these data points into the training dataset, we anticipate an improvement in the model's ability to generalize and accurately predict outcomes in this problematic region, ultimately leading to better overall performance on the test set.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Classifier</th>
+                                    <th>Train Accuracy</th>
+                                    <th>Test Accuracy</th>
+                                    <th>Train AUC</th>
+                                    <th>Test AUC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>LightGBM</td>
+                                    <td>0.950902</td>
+                                    <td>0.962709</td>
+                                    <td>0.972617</td>
+                                    <td>0.964740</td>
+                                </tr>
+                                <tr>
+                                    <td>CatBoost</td>
+                                    <td>0.957445</td>
+                                    <td>0.962709</td>
+                                    <td>0.973961</td>
+                                    <td>0.963814</td>
+                                </tr>
+                                <tr>
+                                    <td>XGBoost</td>
+                                    <td>0.964206</td>
+                                    <td>0.960925</td>
+                                    <td>0.986357</td>
+                                    <td>0.962455</td>
+                                </tr>
+                                <tr>
+                                    <td>Gradient Boosting</td>
+                                    <td>0.941038</td>
+                                    <td>0.956149</td>
+                                    <td>0.938776</td>
+                                    <td>0.952149</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>8.  Model Comparison: Post-Reallocation vs. Baseline</h3>
+                        <p>In all cases, the models showed improvements in Test Accuracy and Test AUC after the reallocation of misclassified points. Notably, LightGBM saw a significant jump in test performance, with Test AUC improving from 0.9569 to 0.9647, confirming that the additional challenging examples enhanced the model's predictive power. Similarly, CatBoost and XGBoost benefited from this reallocation, improving both in test accuracy and AUC. Gradient Boosting also experienced a notable uplift, though it remains the weakest performer compared to other models.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            
+    </section> 
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Akhil Prakash Shenvi Sangaonkar</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

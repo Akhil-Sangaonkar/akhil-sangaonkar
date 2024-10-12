@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Prakash Shenvi Sangaonkar - Photography</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+        }
+
+        .navbar-dark .navbar-brand, .navbar-dark .nav-link {
+            color: white;
+        }
+
+        footer {
+            background-color: #222;
+        }
+
+        a {
+            color: #00bcd4;
+        }
+
+        a:hover {
+            color: #0288d1;
+        }
+
+        /* Styles for the photo grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Reduce minmax width by 50% */
+            gap: 10px;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 300px; /* Fixed height */
+            object-fit: cover; /* Crop and maintain aspect ratio */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(0.95); /* Zoom out effect */
+        }
+
+        /* Modal styles */
+        .modal-content {
+            background-color: #000; /* Black background for the modal */
+            color: white;
+        }
+
+        .modal-header {
+            border-bottom: none;
+        }
+
+        .close {
+            color: white; /* Change close button color to white */
+        }
+
+        .modal-title {
+            color: white; /* Title color */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Akhil Prakash Shenvi Sangaonkar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resume.html">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ml-projects.html">ML Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="photography.html">Photography</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Photography Section -->
+    <section id="photography" class="container mt-5">
+        <h2 class="text-center">Photography</h2>
+
+        <!-- Photo Grid -->
+        <div class="photo-grid">
+            <img src="images/photo1.jpeg" alt="Photo 1" data-toggle="modal" data-target="#photoModal" data-img="images/photo1.jpeg" data-title="Savouring the sunrise from a gondola in the city of Venice" data-summary="As the sun rises over the tranquil waterways of Venice, gondolas glide gracefully through the serene morning mist. In the distance, the St. Mark's Basilica stands majestically, a testament to the city's rich history and enduring beauty. The soft light of the morning sun creates a magical atmosphere, casting a warm glow over the city's historic buildings and narrow streets. The scene is one of quiet contemplation, a moment of peace in a city known for its bustling energy. This beautiful photo captures the essence of Venice, a city of mystery, history, and endless fascination.">
+            <img src="images/photo2.jpeg" alt="Photo 2" data-toggle="modal" data-target="#photoModal" data-img="images/photo2.jpeg" data-title="When the morning light meets St. Paul's Cathedral" data-summary="In this striking long exposure photograph, the beauty of St. Paul's Cathedral is elevated to a new level as the sun rises and casts a warm glow on the structure. The cathedral's reflection in the smooth surface of the water is mirrored perfectly, creating a stunning scene of symmetry and stillness. The long exposure allows the colours and details to come to life, as if you can feel the warmth and hear the stillness of the morning air. This image captures the timeless grandeur of the cathedral in a new and unique way, showcasing the power and majesty of both nature and architecture.">
+            <img src="images/photo3.jpeg" alt="Photo 3" data-toggle="modal" data-target="#photoModal" data-img="images/photo3.jpeg" data-title="Afternoon light dances on Riomaggiore's beauty" data-summary="The charming village of Riomaggiore in Cinque Terre basks in the soft light of a beautiful afternoon. The warm sun casts playful shadows on the town's colourful buildings and streets, creating a lively atmosphere. The air is filled with a sense of serenity and joy, as visitors and locals alike soak up the timeless beauty of this enchanting place. The picturesque scene is a feast for the eyes, with every detail illuminated by the gentle afternoon light. Riomaggiore is a place of endless fascination, where natural and man-made beauty collide in perfect harmony.">
+            <img src="images/photo4.jpeg" alt="Photo 4" data-toggle="modal" data-target="#photoModal" data-img="images/photo4.jpeg" data-title="A golden hour view of the Eiffel Tower" data-summary="As the sun sets over Paris, the Eiffel Tower is bathed in a warm golden glow, casting long shadows across the city. The tower's steel curves and intricate details are silhouetted against a colorful sky of oranges, pinks, and purples. The tranquil Seine River flows peacefully below, reflecting the tower's brilliance in the water. The iconic tower's intricate iron lattice stands tall and proud, drawing crowds from all over the world. The moment is magical, and captures the essence of Paris - the city of love, romance, and unparalleled beauty.">
+            <img src="images/photo5.jpeg" alt="Photo 5" data-toggle="modal" data-target="#photoModal" data-img="images/photo5.jpeg" data-title="The Basilica and Gondolas' Ballet" data-summary="This photo captures the stunning Basilica di Santa Maria della Salute in Venice during sunrise. The golden light illuminates the basilica and the row of gondolas parked in front, creating a serene and peaceful atmosphere. The long exposure captures the silky appearance of the water, adding to the sense of calm. The colors are soft and warm, with shades of orange and yellow blending together in the sky and reflecting on the water. Overall, it's a breathtaking and magical moment that has been beautifully captured in this photograph.">
+            <img src="images/photo6.jpeg" alt="Photo 6" data-toggle="modal" data-target="#photoModal" data-img="images/photo6.jpeg" data-title="A long exposure journey through history" data-summary="This photo uses long exposure to capture the passage of time and the motion of a historical landmark or moment. The result is an artistic representation that conveys a sense of movement and continuity, offering a unique and immersive visual journey through history.">
+            <img src="images/photo7.jpeg" alt="Photo 7" data-toggle="modal" data-target="#photoModal" data-img="images/photo7.jpeg" data-title="A bridge between worlds, mirrored in the water." data-summary="In this beautiful long exposure photograph, the quaint Dutch village of Zaanse Schans is captured in all its glory. The stillness of the water creates a mirror-like reflection, providing a stunning double image of the charming houses and iconic bridge. The winter morning adds a layer of mystique and tranquility, making this photograph truly mesmerising. The bridge is not just a physical link between two sides, but a connection between worlds, past and present, old and new. The serene landscape and stunning architecture combine to create a breathtaking image that captures the essence of Zaanse Schans.">
+            <img src="images/photo8.jpeg" alt="Photo 8" data-toggle="modal" data-target="#photoModal" data-img="images/photo8.jpeg" data-title="Amidst the storm, St. Paul's Cathedral stands strong" data-summary="The timeless grandeur of St. Paul's Cathedral is emphasised in this photo as it stands strong in the midst of a storm, symbolising resilience and hope.">
+            <img src="images/photo9.jpeg" alt="Photo 9" data-toggle="modal" data-target="#photoModal" data-img="images/photo9.jpeg" data-title="London's icons shine in twilight" data-summary="This stunning photo captures London's Tower Bridge and Canary Wharf during the blue hour, as seen from the Shard. The soft blue and purple hues of the sky create a serene backdrop, while the city lights twinkle below. Tower Bridge stands tall and proud, with its illuminated structure and red accents providing a stunning contrast to the tranquil sky. Canary Wharf's modern architecture dominates the skyline, a testament to London's status as a global financial centre. A breathtaking view of London's iconic landmarks at twilight.">
+            <img src="images/photo10.jpeg" alt="Photo 10" data-toggle="modal" data-target="#photoModal" data-img="images/photo10.jpeg" data-title="London's skyline aglow with history" data-summary="This stunning photo taken from the Shard captures the beauty of St. Paul's Cathedral during a breathtaking sunset. The warm golden light of the setting sun illuminates the historic landmark, casting a soft glow over the intricate details of its stunning architecture. The image showcases the majesty of the cathedral as it stands tall and proud against the vibrant sky. The view from the Shard offers a unique perspective, with the city's iconic landmarks blending seamlessly into the surrounding architecture. A beautiful and unforgettable moment frozen in time.">
+            <img src="images/photo11.jpeg" alt="Photo 11" data-toggle="modal" data-target="#photoModal" data-img="images/photo11.jpeg" data-title="Radiant sunset hues embrace Portland Bill Lighthouse" data-summary="This stunning long-exposure photo captures Portland Bill Lighthouse standing tall against a backdrop of a pink and orange sky, with its beam of light emerging from the lighthouse and extending upwards into the night. The tower's white and red stripes stand out in bold relief against the vibrant sky.">
+            <img src="images/photo12.jpeg" alt="Photo 12" data-toggle="modal" data-target="#photoModal" data-img="images/photo12.jpeg" data-title="Vernazza in twilight blues, where sea and sky converge" data-summary="Vernazza, one of Cinque Terre's jewels, glows in the mellow tones of twilight. The town's famous pastel houses look stunning against the deep blue of the sea and sky. As the sun sets, the horizon becomes blurry, and the ocean and sky appear to merge.">
+
+        </div>
+    </section>
+
+    <!-- Modal for Full-Size Image -->
+    <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoModalLabel">Photo Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="fullImage" src="" alt="Full Size" class="img-fluid mb-3">
+                    <p id="imageSummary"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Akhil Prakash Shenvi Sangaonkar</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript to handle the image click and modal display
+        $(document).ready(function() {
+            $('.photo-grid img').on('click', function() {
+                var imgSrc = $(this).data('img');
+                var imgTitle = $(this).data('title');
+                var imgSummary = $(this).data('summary');
+                $('#fullImage').attr('src', imgSrc);
+                $('#photoModalLabel').text(imgTitle);
+                $('#imageSummary').text(imgSummary);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

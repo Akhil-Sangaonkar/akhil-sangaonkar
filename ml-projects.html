@@ -72,11 +72,13 @@
 
     /* Styles for the accordion icon rotation */
     .accordion-button i {
-        transition: transform 0.3s ease; /* Smooth rotation */
-    }
-    .accordion-button[aria-expanded="true"] i {
-        transform: rotate(180deg); /* Rotate arrow when expanded */
-    }
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.accordion-button[aria-expanded="true"] .arrow {
+    transform: rotate(90deg); /* Rotate arrow 90 degrees when expanded */
+}
+    
 
 
         
@@ -117,8 +119,10 @@
             <div class="card mb-3">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            <span style="font-size: 25px; font-weight: bold;">Optimizing Reallocation: Classifiers Driving Fraud Detection Efficiency (Click to expand)</span>
+                        <button class="accordion-button" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" viewBox="0 0 24 24">
+                                <path d="M10 7l5 5-5 5z"/>
+                            </svg> <!-- Down arrow SVG --> <span style="font-size: 25px; font-weight: bold;">Optimizing Reallocation: Classifiers Driving Fraud Detection Efficiency </span>
                         </button>
                     </h2>
                 </div>
@@ -142,9 +146,11 @@
                         <p>The first step in the exploratory data analysis is to examine the distribution of the target variable, loan status, which is a binary classification indicating whether an applicant is approved for a loan. The analysis reveals that approximately 85% of the applicants have not been approved for a loan, suggesting a significant class imbalance in the dataset.</p>
 
                         <img src="images/project1/1.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
                         <h4>2.2 Correlation between the features</h4>
                         <p>In analyzing the correlation between features, most exhibited very low correlations, with values close to zero, indicating weak or no linear relationships among them. However, two features, loan int rate and loan percent income, demonstrated a negative but very weak correlation with person income and person emp length, respectively, suggesting an inverse relationship. Conversely, person age and cb person cred hist length showed a very strong positive correlation, implying a significant linear relationship between these two variables. Additionally, loan amount and loan percent income exhibited a positive relationship, indicating that as one increases, the other tends to increase as well.</p>
                         <img src="images/project1/2.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
                         <h4>2.3 Pair Plot</h4>
                         <p>The pair plot analysis revealed two key insights. Firstly, individuals with high income were almost certain to be rejected for a loan, indicating a potential bias in the loan approval process. Secondly, the relationship between person income and loan amount exhibited a hyperbolic relation, suggesting that as income increases, the amount of loan requested follows a constant ratio, reflecting a non-linear interaction between the two variables. Additionally, several anomalies were detected, including individuals with ages above 100 and employment lengths exceeding 100 years, which are highly improbable. These outlier data points will be removed from the dataset to ensure more accurate analysis.</p>
                         <img src="images/project1/5.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
@@ -152,6 +158,7 @@
                         <h4>2.4 Distribution of Numerical Features across training and testing data</h4>
                         <p>The histogram distribution revealed a nearly identical distribution of numerical features between the training and testing datasets. Notably, there were a few individuals paying a higher loan percentage relative to their income in both datasets. By observing the distribution of cb person cred hist length, it would be sensible to create a categorical column, classifying it into three categories: short, medium, and long</p>
                         <img src="images/project1/4.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
+
                         <h4>2.5 Distribution of Categorical Features across training and testing data</h4>
                         <p>The distribution of categorical features between the training and testing datasets was almost identical. Additionally, an age category column was created by observing the numerical distribution of the person age column, allowing for a more nuanced analysis of age-related trends in the data.</p>
                         <img src="images/project1/3.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
@@ -226,6 +233,7 @@
                         
                         
                         <h3>4. Dimensionality Reduction</h3>
+
                         <p>In this section, we will utilize Principal Component Analysis (PCA) as a dimensionality reduction technique to generate a latent space for our dataset. This approach allows us to reduce the dimensionality of the data while preserving as much variance as possible. Upon observing the distribution of the training data, test data, and final test data in this latent space, we note that all three datasets exhibit similar distributions, along with some outliers. Additionally, five distinct clusters can be identified within the data. We will analyze the characteristics of these clusters in the next section.</p>                        
                         <img src="images/project1/6.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
@@ -287,6 +295,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        
                         <h3>8.  Model Comparison: Post-Reallocation vs. Baseline</h3>
                         <p>In all cases, the models showed improvements in Test Accuracy and Test AUC after the reallocation of misclassified points. Notably, LightGBM saw a significant jump in test performance, with Test AUC improving from 0.9569 to 0.9647, confirming that the additional challenging examples enhanced the model's predictive power. Similarly, CatBoost and XGBoost benefited from this reallocation, improving both in test accuracy and AUC. Gradient Boosting also experienced a notable uplift, though it remains the weakest performer compared to other models.
 
@@ -307,5 +316,23 @@
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function toggleAccordion(button) {
+        const collapseDiv = button.parentNode.parentNode.nextElementSibling; // Get the associated collapse div
+        const isCollapsed = collapseDiv.classList.contains('show'); // Check if it's currently collapsed
+
+        // Toggle the visibility
+        if (isCollapsed) {
+            collapseDiv.classList.remove('show');
+            button.setAttribute('aria-expanded', 'false'); // Update aria-expanded attribute
+        } else {
+            collapseDiv.classList.add('show');
+            button.setAttribute('aria-expanded', 'true'); // Update aria-expanded attribute
+        }
+
+        // Rotate the arrow
+        button.classList.toggle('collapsed', !isCollapsed);
+    }
+</script>
 </body>
 </html>

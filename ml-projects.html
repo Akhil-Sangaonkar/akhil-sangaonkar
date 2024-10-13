@@ -45,10 +45,14 @@
         color: white !important; /* White text when expanded */
     }
 
-    .accordion-button:hover, .accordion-button:focus {
+    .accordion-button:focus {
         color: #fbfdfe !important; /* Light color on hover for accordion buttons */
         color: #00bcd4; 
     }
+    .accordion-button:hover {
+    background-color: #4a4a4abe; /* Change to your desired color */
+    color: #00bcd4; /* Change text color if needed */
+}
 
     img.project-img {
         max-width: 100%; /* Responsive image */
@@ -295,7 +299,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <h3>8.  Model Comparison: Post-Reallocation vs. Baseline</h3>
                         <p>In all cases, the models showed improvements in Test Accuracy and Test AUC after the reallocation of misclassified points. Notably, LightGBM saw a significant jump in test performance, with Test AUC improving from 0.9569 to 0.9647, confirming that the additional challenging examples enhanced the model's predictive power. Similarly, CatBoost and XGBoost benefited from this reallocation, improving both in test accuracy and AUC. Gradient Boosting also experienced a notable uplift, though it remains the weakest performer compared to other models.
 

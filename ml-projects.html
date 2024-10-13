@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akhil Prakash Shenvi Sangaonkar - ML Projects</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
     <style>
         
     body {
@@ -126,7 +128,7 @@
                         <button class="accordion-button" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
                             <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" viewBox="0 0 24 24">
                                 <path d="M10 7l5 5-5 5z"/>
-                            </svg> <!-- Down arrow SVG --> <span style="font-size: 25px; font-weight: bold;">Optimizing Reallocation: Classifiers Driving loan approval Efficiency </span>
+                            </svg> <!-- Down arrow SVG --> <span style="font-size: 25px; font-weight: bold;">Misclassified to Mastered: Reallocation for Better Approvals</span>
                         </button>
                     </h2>
                 </div>
@@ -134,16 +136,21 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#projectsAccordion">
                     <div class="card-body">
                         <h3>1. Introduction</h3>
-                        <p>This project focuses on predicting whether an applicant is approved for a loan. By employing a systematic approach, the project aims to uncover patterns and insights from the data.</p>
+                        <p>This project focuses on predicting whether a loan application gets approved. Through a systematic approach, I aimed to uncover patterns and insights from the data that could help better understand the factors influencing loan approval decisions. The original dataset is available <a href="https://www.kaggle.com/competitions/playground-series-s4e10" target="_blank">here</a>.</p>
 
-                        <p>   Initial exploratory data analysis (EDA) will provide an understanding of the dataset's structure, identify missing values, and visualize key features. Following this, several baseline machine learning models will be trained to determine which one achieves the best performance based on the Area Under the Curve (AUC) metric on the test set.</p>
+                        <p>   The initial exploratory data analysis will provide an understanding of the structure of the dataset,and visualize key features.
+
+                            Following this, several baseline machine learning models will be trained to determine which one achieves the best performance based on the Area Under the Curve (AUC) metric on the test set.</p>
                             
-                        <p>   To further improve the model's predictive capabilities, Principal Component Analysis (PCA) will be applied to reduce dimensionality and reveal underlying patterns. Additionally, clustering analysis will be conducted using the PCA components to gain insights into data distribution and potential groupings of applicants.</p>
+                        <p> To enhance the model's predictive power, Principal Component Analysis will be employed to simplify the data and highlight key patterns. By reducing the number of variables, PCA can reveal underlying trends that may not be immediately apparent. Additionally, clustering analysis will be conducted on the PCA components to explore how applicants naturally group together, providing deeper insights into the data and helping to refine the model further.</p>
                             
-                        <p>   Finally, the project will explore how the model operates within the latent space, interpreting its decision-making process and the importance of various features. Through this approach, the project aims to enhance the predictability of loan approvals while shedding light on the factors influencing applicants' success rates.</p>
+                        <p>   Finally, the project will explore how the model operates within the latent space, interpreting its decision-making process. Through this approach, the project aims to enhance the predictability of loan approvals.</p>
                         
                         <h3>2. Exploratory Data Analysis (EDA)</h3>
-                        <p>In this phase, we analyze the dataset to understand the distribution of variables, identify patterns, and uncover any potential anomalies. This helps in informing feature engineering and model selection.</p>
+                        <p>
+                            In this phase, the dataset is analyzed to understand the distribution of variables, identify patterns, and uncover any potential anomalies. 
+                            This helps to inform subsequent steps in the modeling process.
+                        </p>
                         
                         <!-- PNG Image for Project 1 -->
                         <h4>2.1 Distribution of target feature</h4>
@@ -152,19 +159,19 @@
                         <img src="images/project1/1.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
                         <h4>2.2 Correlation between the features</h4>
-                        <p>In analyzing the correlation between features, most exhibited very low correlations, with values close to zero, indicating weak or no linear relationships among them. However, two features, loan int rate and loan percent income, demonstrated a negative but very weak correlation with person income and person emp length, respectively, suggesting an inverse relationship. Conversely, person age and cb person cred hist length showed a very strong positive correlation, implying a significant linear relationship between these two variables. Additionally, loan amount and loan percent income exhibited a positive relationship, indicating that as one increases, the other tends to increase as well.</p>
+                        <p>In analyzing the correlation between features, most exhibited very low correlations, with values close to zero, indicating weak or no linear relationships among them. However, two features, loan int rate and loan percent income, demonstrated a negative but very weak correlation with person income and person emp length, respectively, suggesting an inverse relationship. Conversely, person age and cb person cred hist length showed a very strong positive correlation, implying a significant linear relationship between these two variables. Finally, loan amount and loan percent income exhibited a positive relationship, indicating that as one increases, the other tends to increase as well.</p>
                         <img src="images/project1/2.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
                         <h4>2.3 Pair Plot</h4>
-                        <p>The pair plot analysis revealed two key insights. Firstly, individuals with high income were almost certain to be rejected for a loan, indicating a potential bias in the loan approval process. Secondly, the relationship between person income and loan amount exhibited a hyperbolic relation, suggesting that as income increases, the amount of loan requested follows a constant ratio, reflecting a non-linear interaction between the two variables. Additionally, several anomalies were detected, including individuals with ages above 100 and employment lengths exceeding 100 years, which are highly improbable. These outlier data points will be removed from the dataset to ensure more accurate analysis.</p>
+                        <p>The pair plot analysis revealed two key insights. Firstly, individuals with high income were almost certain to be rejected for a loan, indicating a potential bias in the loan approval process. Secondly, the relationship between person income and loan amount exhibited a hyperbolic relation, suggesting that as income increases, the amount of loan requested follows a constant ratio, reflecting a non-linear interaction between the two variables. Several anomalies were also detected, including individuals with ages above 100 and employment lengths exceeding 100 years, which are highly improbable. These outlier data points will be removed from the dataset to ensure more accurate analysis.</p>
                         <img src="images/project1/5.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
                         <h4>2.4 Distribution of Numerical Features across training and testing data</h4>
-                        <p>The histogram distribution revealed a nearly identical distribution of numerical features between the training and testing datasets. Notably, there were a few individuals paying a higher loan percentage relative to their income in both datasets. By observing the distribution of cb person cred hist length, it would be sensible to create a categorical column, classifying it into three categories: short, medium, and long</p>
+                        <p>The histogram distribution revealed a nearly identical distribution of numerical features between the training and testing datasets. Notably, there were a few individuals paying a higher loan percentage relative to their income in both datasets. By observing the distribution of cb person cred hist length, it would be sensible to create a categorical column, classifying it into three categories: short, medium, and long.</p>
                         <img src="images/project1/4.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
                         <h4>2.5 Distribution of Categorical Features across training and testing data</h4>
-                        <p>The distribution of categorical features between the training and testing datasets was almost identical. Additionally, an age category column was created by observing the numerical distribution of the person age column, allowing for a more nuanced analysis of age-related trends in the data.</p>
+                        <p>The distribution of categorical features between the training and testing datasets were also identical. An age category column was created by observing the numerical distribution of the person age column, allowing for a more nuanced analysis of age-related trends in the data.</p>
                         <img src="images/project1/3.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
               
@@ -176,7 +183,7 @@
 
                         <h3>3. Model Training</h3>
 
-                        <p>The performance of various classifiers was assessed based on accuracy and AUC metrics for both training and testing datasets. Among the classifiers, XGBoost achieved the highest training accuracy (96.64%) and training AUC (98.89%), indicating strong predictive power on the training set. However, it showed a slight drop in test accuracy (95.05%) and test AUC (95.26%), which may suggest some level of overfitting. LightGBM and CatBoost also demonstrated robust performance, with test accuracies of 95.23% and 95.15%, respectively. Notably, Gradient Boosting had the lowest performance across all metrics, suggesting it may not be as well-suited for this dataset compared to the other models. Overall, the results indicate that while all models performed well, LightGBM showed competitive performance with the best test AUC. Based on this metric, we will retrain LightGBM and further analyze its behavior in the latent space generated using PCA.</p>
+                        <p>The performance of various classifiers was assessed based on accuracy and AUC metrics for both training and testing datasets. Among the classifiers, XGBoost achieved the highest training accuracy (96.64%) and training AUC (98.89%), indicating strong predictive power on the training set. However, it showed a slight drop in test accuracy (95.05%) and test AUC (95.26%), which suggested some level of overfitting. LightGBM and CatBoost also demonstrated robust performance, with test accuracies of 95.23% and 95.15%, respectively. Notably, Gradient Boosting had the lowest performance across all metrics, suggesting it may not be as well-suited for this dataset compared to the other models. Overall, LightGBM showed competitive performance with the best test AUC. Based on this metric, we will retrain LightGBM and further analyze its behavior in the latent space generated using PCA.</p>
                         <table>
                             <thead>
                                 <tr>
@@ -238,26 +245,26 @@
                         
                         <h3>4. Dimensionality Reduction</h3>
 
-                        <p>In this section, we will utilize Principal Component Analysis (PCA) as a dimensionality reduction technique to generate a latent space for our dataset. This approach allows us to reduce the dimensionality of the data while preserving as much variance as possible. Upon observing the distribution of the training data, test data, and final test data in this latent space, we note that all three datasets exhibit similar distributions, along with some outliers. Additionally, five distinct clusters can be identified within the data. We will analyze the characteristics of these clusters in the next section.</p>                        
+                        <p>In this section, we will utilize Principal Component Analysis as a dimensionality reduction technique to generate a latent space for our dataset. Upon observing the distribution of the training data, test data, and final test data in this latent space, we note that all three datasets exhibit similar distributions, along with some outliers. Most importantly, five distinct clusters can be identified within the data. We will analyze the characteristics of these clusters in the next section.</p>                        
                         <img src="images/project1/6.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
                         <h3>5. Model Behaviour in Latent Space</h3>
                         <p>In this section, we will observe the regions in the latent space where the model fails to accurately predict outcomes, identifying specific areas of misclassification. Additionally, we will analyze the true positives, true negatives, false positives, and false negatives within this latent space to gain a deeper understanding of the model's performance and its behavior regarding different prediction scenarios. This analysis will help us refine the model and improve its predictive capabilities.</p>
                         <h4>5.1 True Observation VS Predicted </h4>
-                        <p>In this analysis, we clearly observe that the model struggles to accurately predict outcomes in the region where the PCA values on the y-axis are greater than 0. This indicates a potential area of concern where the model may be misclassifying instances</p>
+                        <p>In this analysis, we clearly observe that the model struggles to accurately predict outcomes in the region where the PCA2 values are greater than 0. This indicates a potential area of concern where the model may be misclassifying instances</p>
                         <img src="images/project1/7.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
                         <h4>5.2 Assessment of Classification Outcomes</h4>
-                        <p>In this assessment, we observe that the model's predictions are highly accurate in the region where x is greater than 2 in the latent space. Conversely, most data points are densely packed in the region where x is less than -0.5, which corresponds to a higher incidence of misclassifications. This observation highlights a critical area where the model's performance can be improved, suggesting a need for further analysis and potential refinement of the model in this densely populated region.</p>
+                        <p>In this assessment, we observe that the model's predictions are highly accurate in the region where PCA1 is greater than 2 in the latent space. Conversely, most data points are densely packed in the region where PCA1 is less than -0.5, which corresponds to a higher incidence of misclassifications. This observation highlights a critical area where the model's performance can be improved, suggesting a need for further analysis and potential refinement of the model in this densely populated region.</p>
                         <img src="images/project1/8.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
 
                         <h3>6. Clustering Analysis</h3>
-                        <p>In this section, we aimed to understand the nature of the identified clusters and the basis for their grouping. Through data analysis and manual clustering, we identified five distinct clusters formed based on two categorical features: cred hist length cat and age category. The following figure illustrates how each category fits into these clusters, providing insight into the characteristics that define each group.</p>                       
+                        <p>In this section, we aimed to understand the nature of the identified clusters and the basis for their grouping. Through data analysis and manual clustering, we identified five distinct clusters formed based on two categorical features: cred hist length cat and age category. The data points that did not fit any clusters were considered outliers. The following figure illustrates how each category fits into these clusters, providing insight into the characteristics that define each group.</p>                       
                         <img src="images/project1/9.jpeg" alt="Insurance Fraud Detection Analysis" class="project-img">
 
                         <h3>7. Enhancing Model Performance through Data Reallocation and Final Results</h3>
-                        <p>Building on the insights from 5.2 Assessment of Classification Outcomes, we recognize that many misclassified data points are concentrated in the densely populated region where x is less than -0.5. To enhance the model's performance, we will reallocate 50% of these misclassified data points from the test set to the training set. This strategic move aims to provide the model with additional examples of these challenging cases, allowing it to learn from them effectively. By incorporating these data points into the training dataset, we anticipate an improvement in the model's ability to generalize and accurately predict outcomes in this problematic region, ultimately leading to better overall performance on the test set.</p>
+                        <p>Building on the insights from 5.2 Assessment of Classification Outcomes, we recognize that many misclassified data points are concentrated in the densely populated region where PCA1 is less than -0.5. To enhance the model's performance, we will reallocate 50% of these misclassified data points from the test set to the training set. This strategic move aims to provide the model with additional examples of these challenging cases, allowing it to learn from them effectively. By incorporating these data points into the training dataset, we anticipate an improvement in the model's ability to generalize and accurately predict outcomes in this problematic region, ultimately leading to better overall performance on the test set.</p>
                         <table>
                             <thead>
                                 <tr>
@@ -301,13 +308,17 @@
                         </table>
 
                         <h3>8.  Model Comparison: Post-Reallocation vs. Baseline</h3>
-                        <p>In all cases, the models showed improvements in Test Accuracy and Test AUC after the reallocation of misclassified points. Notably, LightGBM saw a significant jump in test performance, with Test AUC improving from 0.9569 to 0.9647, confirming that the additional challenging examples enhanced the model's predictive power. Similarly, CatBoost and XGBoost benefited from this reallocation, improving both in test accuracy and AUC. Gradient Boosting also experienced a notable uplift, though it remains the weakest performer compared to other models.
+                        <p>In all cases, the models showed improvements in Test Accuracy and Test AUC after the reallocation of misclassified points. Notably, LightGBM saw a significant jump in test performance, with Test AUC improving from 0.9569 to 0.9647, confirming that the additional challenging examples enhanced the model's predictive power. Similarly, CatBoost and XGBoost benefited from this reallocation, improving both in test accuracy and AUC. Gradient Boosting also experienced a notable uplift, though it remains the weakest performer compared to other models.</p>
+                        <h3>9. Conclusion</h3>
 
-                        </p>
+                        <p>Finally, the project has demonstrated how the allocation of incomplete data points can improve the prediction of loan approval. By analyzing detailed exploratory data, we discovered key patterns that guide modeling efforts. After testing various classifiers, we found LightGBM to be the best. However, by transferring some of the unclassified cases from the test set to the training set,we have improved the abilityof the model to learn these difficult examples. This approach not only improves our accuracy,but also shows the value of iterative refinement in machine learning. Overall, theproject highlights how intelligent data management can lead to better predictive outcomes.</p>
 
                     </div>
                 </div>
             </div>
+                             <!-- Project 2 Accordion -->
+
+
 
             
     </section> 
@@ -320,6 +331,8 @@
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<script src="static/drawing.js"></script> Update the path as necessary -->
+
 <script>
     function toggleAccordion(button) {
         const collapseDiv = button.parentNode.parentNode.nextElementSibling; // Get the associated collapse div

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akhil Prakash Shenvi Sangaonkar - Photography</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
         body {
             background-color: #000;
@@ -142,11 +144,14 @@
                 <div class="modal-body text-center">
                     <img id="fullImage" src="" alt="Full Size" class="img-fluid mb-3">
                     <p id="imageSummary"class="text-justify"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="prevImage">Previous</button>
-                    <button type="button" class="btn btn-secondary" id="nextImage">Next</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="prevImage">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="nextImage">
+                            <i class="fas fa-arrow-right"></i> Next
+                        </button>
+                    </div>
             </div>
         </div>
     </div>

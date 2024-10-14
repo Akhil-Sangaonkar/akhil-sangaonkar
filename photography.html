@@ -73,8 +73,20 @@
         .modal-title {
             color: white; /* Title color */
         }
- 
+        .modal-body {
+        display: flex;            /* Use flexbox for alignment */
+        justify-content: center;  /* Center items horizontally */
+        align-items: center;      /* Center items vertically */
+        height: 400px;           /* Set a fixed height for the modal */
+        overflow: hidden;  
+        max-height: 1000vh;      /* Hide overflow */
+    }
 
+    #fullImage {
+        max-width: 100%;        /* Limit width to prevent overflow */
+        max-height: 100%;       /* Limit height to prevent overflow */
+        object-fit: contain;     /* Maintain aspect ratio */
+    }
 
     </style>
 </head>
@@ -111,51 +123,53 @@
 
         <!-- Photo Grid -->
         <div class="photo-grid">
-            <img src="images/photo1.jpeg" alt="Photo 1" data-toggle="modal" data-target="#photoModal" data-img="images/photo1.jpeg" data-title="Savouring the sunrise from a gondola in the city of Venice" data-summary="As the sun rises over the tranquil waterways of Venice, gondolas glide gracefully through the serene morning mist. In the distance, the St. Mark's Basilica stands majestically, a testament to the city's rich history and enduring beauty. The soft light of the morning sun creates a magical atmosphere, casting a warm glow over the city's historic buildings and narrow streets. The scene is one of quiet contemplation, a moment of peace in a city known for its bustling energy. This beautiful photo captures the essence of Venice, a city of mystery, history, and endless fascination.">
-            <img src="images/photo2.jpeg" alt="Photo 2" data-toggle="modal" data-target="#photoModal" data-img="images/photo2.jpeg" data-title="When the morning light meets St. Paul's Cathedral" data-summary="In this striking long exposure photograph, the beauty of St. Paul's Cathedral is elevated to a new level as the sun rises and casts a warm glow on the structure. The cathedral's reflection in the smooth surface of the water is mirrored perfectly, creating a stunning scene of symmetry and stillness. The long exposure allows the colours and details to come to life, as if you can feel the warmth and hear the stillness of the morning air. This image captures the timeless grandeur of the cathedral in a new and unique way, showcasing the power and majesty of both nature and architecture.">
-            <img src="images/photo3.jpeg" alt="Photo 3" data-toggle="modal" data-target="#photoModal" data-img="images/photo3.jpeg" data-title="Afternoon light dances on Riomaggiore's beauty" data-summary="The charming village of Riomaggiore in Cinque Terre basks in the soft light of a beautiful afternoon. The warm sun casts playful shadows on the town's colourful buildings and streets, creating a lively atmosphere. The air is filled with a sense of serenity and joy, as visitors and locals alike soak up the timeless beauty of this enchanting place. The picturesque scene is a feast for the eyes, with every detail illuminated by the gentle afternoon light. Riomaggiore is a place of endless fascination, where natural and man-made beauty collide in perfect harmony.">
-            <img src="images/photo4.jpeg" alt="Photo 4" data-toggle="modal" data-target="#photoModal" data-img="images/photo4.jpeg" data-title="A golden hour view of the Eiffel Tower" data-summary="As the sun sets over Paris, the Eiffel Tower is bathed in a warm golden glow, casting long shadows across the city. The tower's steel curves and intricate details are silhouetted against a colorful sky of oranges, pinks, and purples. The tranquil Seine River flows peacefully below, reflecting the tower's brilliance in the water. The iconic tower's intricate iron lattice stands tall and proud, drawing crowds from all over the world. The moment is magical, and captures the essence of Paris - the city of love, romance, and unparalleled beauty.">
-            <img src="images/photo5.jpeg" alt="Photo 5" data-toggle="modal" data-target="#photoModal" data-img="images/photo5.jpeg" data-title="The Basilica and Gondolas' Ballet" data-summary="This photo captures the stunning Basilica di Santa Maria della Salute in Venice during sunrise. The golden light illuminates the basilica and the row of gondolas parked in front, creating a serene and peaceful atmosphere. The long exposure captures the silky appearance of the water, adding to the sense of calm. The colors are soft and warm, with shades of orange and yellow blending together in the sky and reflecting on the water. Overall, it's a breathtaking and magical moment that has been beautifully captured in this photograph.">
-            <img src="images/photo6.jpeg" alt="Photo 6" data-toggle="modal" data-target="#photoModal" data-img="images/photo6.jpeg" data-title="A long exposure journey through history" data-summary="This photo uses long exposure to capture the passage of time and the motion of a historical landmark or moment. The result is an artistic representation that conveys a sense of movement and continuity, offering a unique and immersive visual journey through history.">
-            <img src="images/photo7.jpeg" alt="Photo 7" data-toggle="modal" data-target="#photoModal" data-img="images/photo7.jpeg" data-title="A bridge between worlds, mirrored in the water." data-summary="In this beautiful long exposure photograph, the quaint Dutch village of Zaanse Schans is captured in all its glory. The stillness of the water creates a mirror-like reflection, providing a stunning double image of the charming houses and iconic bridge. The winter morning adds a layer of mystique and tranquility, making this photograph truly mesmerising. The bridge is not just a physical link between two sides, but a connection between worlds, past and present, old and new. The serene landscape and stunning architecture combine to create a breathtaking image that captures the essence of Zaanse Schans.">
-            <img src="images/photo8.jpeg" alt="Photo 8" data-toggle="modal" data-target="#photoModal" data-img="images/photo8.jpeg" data-title="Amidst the storm, St. Paul's Cathedral stands strong" data-summary="The timeless grandeur of St. Paul's Cathedral is emphasised in this photo as it stands strong in the midst of a storm, symbolising resilience and hope.">
-            <img src="images/photo9.jpeg" alt="Photo 9" data-toggle="modal" data-target="#photoModal" data-img="images/photo9.jpeg" data-title="London's icons shine in twilight" data-summary="This stunning photo captures London's Tower Bridge and Canary Wharf during the blue hour, as seen from the Shard. The soft blue and purple hues of the sky create a serene backdrop, while the city lights twinkle below. Tower Bridge stands tall and proud, with its illuminated structure and red accents providing a stunning contrast to the tranquil sky. Canary Wharf's modern architecture dominates the skyline, a testament to London's status as a global financial centre. A breathtaking view of London's iconic landmarks at twilight.">
-            <img src="images/photo10.jpeg" alt="Photo 10" data-toggle="modal" data-target="#photoModal" data-img="images/photo10.jpeg" data-title="London's skyline aglow with history" data-summary="This stunning photo taken from the Shard captures the beauty of St. Paul's Cathedral during a breathtaking sunset. The warm golden light of the setting sun illuminates the historic landmark, casting a soft glow over the intricate details of its stunning architecture. The image showcases the majesty of the cathedral as it stands tall and proud against the vibrant sky. The view from the Shard offers a unique perspective, with the city's iconic landmarks blending seamlessly into the surrounding architecture. A beautiful and unforgettable moment frozen in time.">
-            <img src="images/photo11.jpeg" alt="Photo 11" data-toggle="modal" data-target="#photoModal" data-img="images/photo11.jpeg" data-title="Radiant sunset hues embrace Portland Bill Lighthouse" data-summary="This stunning long-exposure photo captures Portland Bill Lighthouse standing tall against a backdrop of a pink and orange sky, with its beam of light emerging from the lighthouse and extending upwards into the night. The tower's white and red stripes stand out in bold relief against the vibrant sky.">
-            <img src="images/photo12.jpeg" alt="Photo 12" data-toggle="modal" data-target="#photoModal" data-img="images/photo12.jpeg" data-title="Vernazza in twilight blues, where sea and sky converge" data-summary="Vernazza, one of Cinque Terre's jewels, glows in the mellow tones of twilight. The town's famous pastel houses look stunning against the deep blue of the sea and sky. As the sun sets, the horizon becomes blurry, and the ocean and sky appear to merge.">
-            <img src="images/photo13.jpeg" alt="Photo 13" data-toggle="modal" data-target="#photoModal" data-img="images/photo13.jpeg" data-title="London's iconic landmark meets nature's delicate beauty" data-summary="Experience the beauty of spring in London with this stunning reel featuring cherry blossoms and the iconic London Eye. The delicate pink blooms create a serene atmosphere against the backdrop of the city skyline, capturing the essence of the season.">
-            <img src="images/photo14.jpeg" alt="Photo 14" data-toggle="modal" data-target="#photoModal" data-img="images/photo14.jpeg" data-title="Solitude Under Rain Clouds" data-summary="In Monterosso, Cinque Terre, a solitary home stands still against the backdrop of ominous rain clouds. The landscape is both peaceful and melancholy, conveying the feeling of loneliness in a lovely setting. The lovely murmur of the water blends with the whispers of the wind, as Monterosso's appeal lingers despite the approaching storm. This snapshot captures a moment of serene isolation in which nature and architecture live in harmony.">
-            <img src="images/photo15.jpeg" alt="Photo 15" data-toggle="modal" data-target="#photoModal" data-img="images/photo15.jpeg" data-title="London's history reflected in the present" data-summary="The early morning light casts a gentle glow on London's iconic Tower Bridge, a symbol of the city's rich history and enduring spirit. The soft mist creates a dreamlike atmosphere, shrouding the bridge in a veil of mystery and intrigue. The intricate details of the bridge's stunning architecture are visible in the gentle light, highlighting the skill and artistry of its creators. Tower Bridge stands as a testament to London's greatness, an enduring reminder of the city's rich past and bright future. This tranquil moment is a beautiful snapshot of a city in transition, caught in a moment of serene reflection.
-            ">
-            <img src="images/photo16.jpeg" alt="Photo 16" data-toggle="modal" data-target="#photoModal" data-img="images/photo16.jpeg" data-title="Manarola's pastel hues come alive in long exposure" data-summary="The stunning village of Manarola is captured in this beautiful long exposure photograph. The soft, pastel-coloured houses stand out against the moody, cloudy sky, creating a sense of serenity and calm. The sea is captured in motion, with gentle waves lapping at the shore, as the village sits nestled along the coastline. The clouds add a sense of depth and drama to the scene, highlighting the unique beauty of this picturesque Italian town. This photograph is a true masterpiece, capturing the essence of Manarola's charm and beauty, and a moment in time that will be remembered forever.">
+            <img src="images/photo1.jpeg" alt="Photo 1" data-toggle="modal" data-target="#photoModal" data-img="images/photo1.jpeg" data-title="">
+            <img src="images/photo2.jpeg" alt="Photo 2" data-toggle="modal" data-target="#photoModal" data-img="images/photo2.jpeg" data-title="When the morning light meets St. Paul's Cathedral" >
+            <img src="images/photo3.jpeg" alt="Photo 3" data-toggle="modal" data-target="#photoModal" data-img="images/photo3.jpeg" data-title="Afternoon light dances on Riomaggiore's beauty">
+            <img src="images/photo4.jpeg" alt="Photo 4" data-toggle="modal" data-target="#photoModal" data-img="images/photo4.jpeg" data-title="A golden hour view of the Eiffel Tower">
+            <img src="images/photo5.jpeg" alt="Photo 5" data-toggle="modal" data-target="#photoModal" data-img="images/photo5.jpeg" data-title="The Basilica and Gondolas' Ballet" >
+            <img src="images/photo6.jpeg" alt="Photo 6" data-toggle="modal" data-target="#photoModal" data-img="images/photo6.jpeg" data-title="A long exposure journey through history">
+            <img src="images/photo7.jpeg" alt="Photo 7" data-toggle="modal" data-target="#photoModal" data-img="images/photo7.jpeg" data-title="A bridge between worlds, mirrored in the water.">
+            <img src="images/photo8.jpeg" alt="Photo 8" data-toggle="modal" data-target="#photoModal" data-img="images/photo8.jpeg" data-title="Amidst the storm, St. Paul's Cathedral stands strong">
+            <img src="images/photo9.jpeg" alt="Photo 9" data-toggle="modal" data-target="#photoModal" data-img="images/photo9.jpeg" data-title="London's icons shine in twilight">
+            <img src="images/photo10.jpeg" alt="Photo 10" data-toggle="modal" data-target="#photoModal" data-img="images/photo10.jpeg" data-title="London's skyline aglow with history" >
+            <img src="images/photo11.jpeg" alt="Photo 11" data-toggle="modal" data-target="#photoModal" data-img="images/photo11.jpeg" data-title="Radiant sunset hues embrace Portland Bill Lighthouse">
+            <img src="images/photo12.jpeg" alt="Photo 12" data-toggle="modal" data-target="#photoModal" data-img="images/photo12.jpeg" data-title="Vernazza in twilight blues, where sea and sky converge" >
+            <img src="images/photo13.jpeg" alt="Photo 13" data-toggle="modal" data-target="#photoModal" data-img="images/photo13.jpeg" data-title="London's iconic landmark meets nature's delicate beauty">
+            <img src="images/photo14.jpeg" alt="Photo 14" data-toggle="modal" data-target="#photoModal" data-img="images/photo14.jpeg" data-title="Solitude Under Rain Clouds">
+            <img src="images/photo15.jpeg" alt="Photo 15" data-toggle="modal" data-target="#photoModal" data-img="images/photo15.jpeg" data-title="London's history reflected in the present"> 
+            
+            <img src="images/photo16.jpeg" alt="Photo 16" data-toggle="modal" data-target="#photoModal" data-img="images/photo16.jpeg" data-title="Manarola's pastel hues come alive in long exposure"> 
            <!-- Add more images as needed -->
         </div>
     </section>
 
+   
     <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="photoModalLabel" class="modal-title text-center">Photo Title</h5>
+                    <h5 class="modal-title text-center" id="photoModalLabel">Photo Title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body text-center">
+                <div class="modal-body">
                     <img id="fullImage" src="" alt="Full Size" class="img-fluid mb-3">
                     <p id="imageSummary"class="text-justify"></p>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="prevImage">
-                            <i class="fas fa-arrow-left"></i> Previous
-                        </button>
-                        <button type="button" class="btn btn-secondary" id="nextImage">
-                            <i class="fas fa-arrow-right"></i> Next
-                        </button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="prevImage">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="nextImage">
+                        <i class="fas fa-arrow-right"></i> Next
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-
+    
     <!-- Footer -->
     
     <footer class="text-center py-4">
@@ -171,54 +185,69 @@
     
 
             const images = [
-                { src: "images/photo1.jpeg", title: "Savouring the sunrise from a gondola in the city of Venice", summary:"As the sun rises over the tranquil waterways of Venice, gondolas glide gracefully through the serene morning mist. In the distance, the St. Mark's Basilica stands majestically, a testament to the city's rich history and enduring beauty. The soft light of the morning sun creates a magical atmosphere, casting a warm glow over the city's historic buildings and narrow streets. The scene is one of quiet contemplation, a moment of peace in a city known for its bustling energy. This beautiful photo captures the essence of Venice, a city of mystery, history, and endless fascination."
-  },
-                { src: "images/photo2.jpeg", title: "When the morning light meets St. Paul's Cathedral", summary: "In this striking long exposure photograph, the beauty of St. Paul's Cathedral is elevated to a new level as the sun rises and casts a warm glow on the structure. The cathedral's reflection in the smooth surface of the water is mirrored perfectly, creating a stunning scene of symmetry and stillness. The long exposure allows the colours and details to come to life, as if you can feel the warmth and hear the stillness of the morning air. This image captures the timeless grandeur of the cathedral in a new and unique way, showcasing the power and majesty of both nature and architecture."
- },
-                { src: "images/photo3.jpeg", title: "Afternoon light dances on Riomaggiore's beauty", summary:   "The charming village of Riomaggiore in Cinque Terre basks in the soft light of a beautiful afternoon. The warm sun casts playful shadows on the town's colourful buildings and streets, creating a lively atmosphere. The air is filled with a sense of serenity and joy, as visitors and locals alike soak up the timeless beauty of this enchanting place. The picturesque scene is a feast for the eyes, with every detail illuminated by the gentle afternoon light. Riomaggiore is a place of endless fascination, where natural and man-made beauty collide in perfect harmony." },
-                { src: "images/photo4.jpeg", title: "A golden hour view of the Eiffel Tower", summary: "As the sun sets over Paris, the Eiffel Tower is bathed in a warm golden glow, casting long shadows across the city. The tower's steel curves and intricate details are silhouetted against a colorful sky of oranges, pinks, and purples. The tranquil Seine River flows peacefully below, reflecting the tower's brilliance in the water. The iconic tower's intricate iron lattice stands tall and proud, drawing crowds from all over the world. The moment is magical, and captures the essence of Paris - the city of love, romance, and unparalleled beauty." },
-                { src: "images/photo5.jpeg", title: "The Basilica and Gondolas' Ballet", summary: "This photo captures the stunning Basilica di Santa Maria della Salute in Venice during sunrise. The golden light illuminates the basilica and the row of gondolas parked in front, creating a serene and peaceful atmosphere. The long exposure captures the silky appearance of the water, adding to the sense of calm. The colors are soft and warm, with shades of orange and yellow blending together in the sky and reflecting on the water. Overall, it's a breathtaking and magical moment that has been beautifully captured in this photograph." },
-                { src: "images/photo6.jpeg", title: "A long exposure journey through history", summary: "This photo uses long exposure to capture the passage of time and the motion of a historical landmark or moment. The result is an artistic representation that conveys a sense of movement and continuity, offering a unique and immersive visual journey through history." },
-                { src: "images/photo7.jpeg", title: "A bridge between worlds, mirrored in the water.", summary: "In this beautiful long exposure photograph, the quaint Dutch village of Zaanse Schans is captured in all its glory. The stillness of the water creates a mirror-like reflection, providing a stunning double image of the charming houses and iconic bridge. The winter morning adds a layer of mystique and tranquility, making this photograph truly mesmerising. The bridge is not just a physical link between two sides, but a connection between worlds, past and present, old and new. The serene landscape and stunning architecture combine to create a breathtaking image that captures the essence of Zaanse Schans." },
-                { src: "images/photo8.jpeg", title: "Amidst the storm, St. Paul's Cathedral stands strong" , summary: "The timeless grandeur of St. Paul's Cathedral is emphasised in this photo as it stands strong in the midst of a storm, symbolising resilience and hope." },
-                { src: "images/photo9.jpeg", title: "London's icons shine in twilight", summary: "This stunning photo captures London's Tower Bridge and Canary Wharf during the blue hour, as seen from the Shard. The soft blue and purple hues of the sky create a serene backdrop, while the city lights twinkle below. Tower Bridge stands tall and proud, with its illuminated structure and red accents providing a stunning contrast to the tranquil sky. Canary Wharf's modern architecture dominates the skyline, a testament to London's status as a global financial centre. A breathtaking view of London's iconic landmarks at twilight." },
-                { src: "images/photo10.jpeg", title: "London's skyline aglow with history", summary:"This stunning photo taken from the Shard captures the beauty of St. Paul's Cathedral during a breathtaking sunset. The warm golden light of the setting sun illuminates the historic landmark, casting a soft glow over the intricate details of its stunning architecture. The image showcases the majesty of the cathedral as it stands tall and proud against the vibrant sky. The view from the Shard offers a unique perspective, with the city's iconic landmarks blending seamlessly into the surrounding architecture. A beautiful and unforgettable moment frozen in time."  },
-                { src: "images/photo11.jpeg", title: "Radiant sunset hues embrace Portland Bill Lighthouse" , summary: "This stunning long-exposure photo captures Portland Bill Lighthouse standing tall against a backdrop of a pink and orange sky, with its beam of light emerging from the lighthouse and extending upwards into the night. The tower's white and red stripes stand out in bold relief against the vibrant sky." },
-                { src: "images/photo12.jpeg", title: "Vernazza in twilight blues, where sea and sky converge", summary: "Vernazza, one of Cinque Terre's jewels, glows in the mellow tones of twilight. The town's famous pastel houses look stunning against the deep blue of the sea and sky. As the sun sets, the horizon becomes blurry, and the ocean and sky appear to merge." },
-                { src: "images/photo13.jpeg", title: "London's iconic landmark meets nature's delicate beauty", summary: "Experience the beauty of spring in London with this stunning reel featuring cherry blossoms and the iconic London Eye. The delicate pink blooms create a serene atmosphere against the backdrop of the city skyline, capturing the essence of the season." },
-                { src: "images/photo14.jpeg", title: "Solitude Under Rain Clouds", summary: "In Monterosso, Cinque Terre, a solitary home stands still against the backdrop of ominous rain clouds. The landscape is both peaceful and melancholy, conveying the feeling of loneliness in a lovely setting. The lovely murmur of the water blends with the whispers of the wind, as Monterosso's appeal lingers despite the approaching storm. This snapshot captures a moment of serene isolation in which nature and architecture live in harmony."},
-                { src: "images/photo15.jpeg", title: "London's history reflected in the present", summary: "The early morning light casts a gentle glow on London's iconic Tower Bridge, a symbol of the city's rich history and enduring spirit. The soft mist creates a dreamlike atmosphere, shrouding the bridge in a veil of mystery and intrigue. The intricate details of the bridge's stunning architecture are visible in the gentle light, highlighting the skill and artistry of its creators. Tower Bridge stands as a testament to London's greatness, an enduring reminder of the city's rich past and bright future. This tranquil moment is a beautiful snapshot of a city in transition, caught in a moment of serene reflection." },
-                { src: "images/photo16.jpeg", title: "Manarola's pastel hues come alive in long exposure", summary: "The stunning village of Manarola is captured in this beautiful long exposure photograph. The soft, pastel-coloured houses stand out against the moody, cloudy sky, creating a sense of serenity and calm. The sea is captured in motion, with gentle waves lapping at the shore, as the village sits nestled along the coastline. The clouds add a sense of depth and drama to the scene, highlighting the unique beauty of this picturesque Italian town. This photograph is a true masterpiece, capturing the essence of Manarola's charm and beauty, and a moment in time that will be remembered forever." }
-           
+                { src: "images/photo1.jpeg", title: "Savouring the sunrise from a gondola in the city of Venice"},
+                { src: "images/photo2.jpeg", title: "When the morning light meets St. Paul's Cathedral"},
+                { src: "images/photo3.jpeg", title: "Afternoon light dances on Riomaggiore's beauty"},
+                { src: "images/photo4.jpeg", title: "A golden hour view of the Eiffel Tower"},
+                { src: "images/photo5.jpeg", title: "The Basilica and Gondolas' Ballet"},
+                { src: "images/photo6.jpeg", title: "A long exposure journey through history"},
+                { src: "images/photo7.jpeg", title: "A bridge between worlds, mirrored in the water."},
+                { src: "images/photo8.jpeg", title: "Amidst the storm, St. Paul's Cathedral stands strong"},
+                { src: "images/photo9.jpeg", title: "London's icons shine in twilight"},
+                { src: "images/photo10.jpeg", title: "London's skyline aglow with history"},
+                { src: "images/photo11.jpeg", title: "Radiant sunset hues embrace Portland Bill Lighthouse"},
+                { src: "images/photo12.jpeg", title: "Vernazza in twilight blues, where sea and sky converge"},
+                { src: "images/photo13.jpeg", title: "London's iconic landmark meets nature's delicate beauty"},
+                { src: "images/photo14.jpeg", title: "Solitude Under Rain Clouds"},
+                { src: "images/photo15.jpeg", title: "London's history reflected in the present"},
+                { src: "images/photo16.jpeg", title: "Manarola's pastel hues come alive in long exposure"}
                 // Add more images as needed
             ];
- let currentIndex = 0;
+            let currentIndex = 0;
 
-    $('.photo-grid img').on('mouseenter', function() {
-        $('.photo-grid img').not(this).addClass('blur');
-    }).on('mouseleave', function() {
-        $('.photo-grid img').removeClass('blur');
-    }).on('click', function() {
-        currentIndex = $(this).index();
-        updateModalContent(currentIndex);
-        $('#photoModal').modal('show');
-    });
+// Event handlers for the images
+$('.photo-grid img').on('mouseenter', function() {
+    $('.photo-grid img').not(this).addClass('blur');
+}).on('mouseleave', function() {
+    $('.photo-grid img').removeClass('blur');
+}).on('click', function() {
+    currentIndex = $(this).index();
+    updateModalContent(currentIndex);
+    $('#photoModal').modal('show');
+});
 
-    $('#nextImage').on('click', function() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateModalContent(currentIndex);
-    });
+// Event handler for the Next button
+$('#nextImage').on('click', function() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateModalContent(currentIndex);
+});
 
-    $('#prevImage').on('click', function() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateModalContent(currentIndex);
-    });
+// Event handler for the Previous button
+$('#prevImage').on('click', function() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateModalContent(currentIndex);
+});
 
-    function updateModalContent(index) {
-        $('#fullImage').attr('src', images[index].src);
-        $('#photoModalLabel').text(images[index].title);
-        $('#imageSummary').text(images[index].summary);
-    }
+// Function to update modal content
+function updateModalContent(index) {
+    // Update the image source and text
+    $('#fullImage').attr('src', images[index].src);
+    $('#photoModalLabel').text(images[index].title);
+    $('#imageSummary').text(images[index].summary);
+
+    // Show the image and summary
+    $('#fullImage').show();
+    $('#imageSummary').show();
+}
+
+// Optional: Clear the modal content when it's closed
+$('#photoModal').on('hidden.bs.modal', function () {
+    $('#fullImage').attr('src', ''); // Clear image source
+    $('#photoModalLabel').text(''); // Clear title
+    $('#imageSummary').text(''); // Clear summary
+    $('#fullImage').hide(); // Hide image
+    $('#imageSummary').hide(); // Hide summary
+});
 });
     </script>
    

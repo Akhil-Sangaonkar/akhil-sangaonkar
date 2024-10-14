@@ -130,19 +130,22 @@
         </div>
     </section>
 
-    <!-- Modal for Full-Size Image -->
     <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="photoModalLabel">Photo Title</h5>
+                    <h5 id="photoModalLabel" class="modal-title text-center">Photo Title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body text-center">
                     <img id="fullImage" src="" alt="Full Size" class="img-fluid mb-3">
-                    <p id="imageSummary"></p>
+                    <p id="imageSummary"class="text-justify"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="prevImage">Previous</button>
+                    <button type="button" class="btn btn-secondary" id="nextImage">Next</button>
                 </div>
             </div>
         </div>
@@ -184,24 +187,34 @@
            
                 // Add more images as needed
             ];
+ let currentIndex = 0;
 
-            $('.photo-grid img').on('mouseenter', function() {
-                $('.photo-grid img').not(this).addClass('blur'); // Add blur class to all images except the hovered one
-            }).on('mouseleave', function() {
-                $('.photo-grid img').removeClass('blur'); // Remove blur from all images when mouse leaves
-            }).on('click', function() {
-                const currentIndex = $(this).index(); // Get the index of the clicked image
-                updateModalContent(currentIndex);
-                $('#photoModal').modal('show');
-            });
+    $('.photo-grid img').on('mouseenter', function() {
+        $('.photo-grid img').not(this).addClass('blur');
+    }).on('mouseleave', function() {
+        $('.photo-grid img').removeClass('blur');
+    }).on('click', function() {
+        currentIndex = $(this).index();
+        updateModalContent(currentIndex);
+        $('#photoModal').modal('show');
+    });
 
-            // Update modal content based on current index
-            function updateModalContent(index) {
-                $('#fullImage').attr('src', images[index].src);
-                $('#photoModalLabel').text(images[index].title);
-                $('#imageSummary').text(images[index].summary);
-            }
-        });
+    $('#nextImage').on('click', function() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateModalContent(currentIndex);
+    });
+
+    $('#prevImage').on('click', function() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateModalContent(currentIndex);
+    });
+
+    function updateModalContent(index) {
+        $('#fullImage').attr('src', images[index].src);
+        $('#photoModalLabel').text(images[index].title);
+        $('#imageSummary').text(images[index].summary);
+    }
+});
     </script>
    
 </body>

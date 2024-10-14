@@ -9,8 +9,7 @@
         body {
             background-color: #000;
             color: white;
-            text-align: left;
-
+            text-align: justify;
         }
 
         .navbar-dark .navbar-brand, .navbar-dark .nav-link {
@@ -27,14 +26,33 @@
 
         a:hover {
             color: #0288d1;
-        
         }
+
         .profile-photo {
             border-radius: 50%;
             width: 100px; /* Adjust size as needed */
             height: 100px; /* Maintain aspect ratio */
             object-fit: cover; /* Ensures image covers the circle */
         }
+
+        
+        
+       
+
+        button.toggle-btn {
+            padding: 5px 15px;
+            cursor: pointer;
+            background-color: gray;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 15px;
+        }
+
+        button.toggle-btn:hover {
+            background-color: darkgray;
+        }
+    
     </style>
 </head>
 <body>
@@ -61,6 +79,7 @@
                     <a class="nav-link" href="photography.html">Photography</a>
                 </li>
             </ul>
+
         </div>
     </nav>
 
@@ -109,5 +128,10 @@
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+
+
+     
 </body>
 </html>

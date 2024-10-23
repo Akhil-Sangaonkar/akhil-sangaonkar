@@ -74,12 +74,30 @@
             color: white; /* Title color */
         }
         .modal-body {
-        display: flex;            /* Use flexbox for alignment */
-        justify-content: center;  /* Center items horizontally */
-        align-items: center;      /* Center items vertically */
-        height: 400px;           /* Set a fixed height for the modal */
-        overflow: hidden;  
-        max-height: 1000vh;      /* Hide overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;   /* Fixed height for consistency */
+    overflow: hidden;  
+    text-align: center;
+    position: relative; /* Ensures content within stays relative */
+}
+
+#fullImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;  /* Spread buttons across footer */
+    width: 100%;
+    margin-top: 15px;
+    position: relative;
+
     }
 
     #fullImage {
@@ -87,6 +105,7 @@
         max-height: 100%;       /* Limit height to prevent overflow */
         object-fit: contain;     /* Maintain aspect ratio */
     }
+    
 
     </style>
 </head>
@@ -156,7 +175,6 @@
                 </div>
                 <div class="modal-body">
                     <img id="fullImage" src="" alt="Full Size" class="img-fluid mb-3">
-                    <p id="imageSummary"class="text-justify"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="prevImage">
@@ -173,7 +191,7 @@
     <!-- Footer -->
     
     <footer class="text-center py-4">
-        <p>&copy; 2024 Akhil Prakash Shenvi Sangaonkar</p>
+        <p>&copy; 2024 Akhil Prakash Shenvi Sangaonkar </p>
     </footer>
 
     <!-- Bootstrap JS -->

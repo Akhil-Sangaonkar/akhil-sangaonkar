@@ -320,7 +320,93 @@
                     </div>
                 </div>
             </div>
-                             <!-- Project 2 Accordion -->
+                      <!-- Project 2 Accordion -->
+<!-- Project 2 -->
+<div class="card mb-3">
+    <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+            <button class="accordion-button" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" viewBox="0 0 24 24">
+                    <path d="M10 7l5 5-5 5z"/>
+                </svg> 
+                <span style="font-size: 25px; font-weight: bold;">🛡️ ScamCallBot: The Polite Indian AI That Wastes Scam Callers' Time</span>
+            </button>
+        </h2>
+    </div>
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#projectsAccordion">
+        <div class="card-body">
+            <h3>1. Introduction</h3>
+            <p>ScamCallBot is an innovative AI-powered voice assistant designed to engage phone scammers in prolonged, unproductive conversations, thereby wasting their time and reducing their capacity to target real victims. Inspired by initiatives like O2's "Daisy" an AI "granny" that chats with scammers about knitting and recipes to keep them occupied ​ScamCallBot adopts a unique persona: a polite and slightly confused Indian individual who responds with curiosity and courtesy.​</p>
+            <p>The primary objective of ScamCallBot is to disrupt the operations of scam callers by leveraging artificial intelligence to simulate realistic and engaging conversations. By doing so, it not only protects potential victims but also contributes to broader efforts in combating fraudulent activities.</p>
+            <p>ScamCallBot utilizes advanced technologies, including:​</p>
+            <ul>
+                <li><strong>Speech Recognition:</strong>  Employs Whisper to accurately transcribe spoken input.​</li>
+                <li><strong>Natural Language Processing:</strong> Uses a Llama-based model to generate contextually appropriate and engaging responses.​</li>
+                <li><strong>Text-to-Speech Synthesis:</strong> Applies Coqui TTS to convert text responses into natural-sounding speech.​</li>
+            </ul>
+            <p>By integrating these components, ScamCallBot offers a seamless and interactive experience that effectively occupies scammers, thereby mitigating their impact on society.​
+                ​</p>
+
+
+
+ 
+
+ 
+
+
+            <h3>2. System Architecture</h3>
+            <p>The architecture includes five core modules:
+                <ul>
+                    <li><strong>Audio Capture:</strong> Records user speech using PyAudio.</li>
+                    <li><strong>Speech-to-Text:</strong> Transcribes audio using Whisper.</li>
+                    <li><strong>Response Generation:</strong> Uses a Llama-based model to generate witty replies.</li>
+                    <li><strong>Text-to-Speech:</strong> Converts text to speech using Coqui TTS.</li>
+                    <li><strong>Audio Playback:</strong> Delivers spoken responses to the user.</li>
+                </ul>
+            </p>
+
+            <h3>3. Workflow</h3>
+            <ul>
+            
+                <li><strong>Capture of user speech and saving as a WAV file.</strong></li>
+                <li><strong>Transcription using Whisper.</strong></li>
+                <li><strong>Response generation using the Llama model</strong>.</li>
+                <li><strong>Speech synthesis via Coqui TTS.</strong></li>
+                <li><strong>Playback of generated response to the user.</strong></li>
+            </ul>
+
+            <h3>4. Conclusion</h3>
+            <p>This voice assistant showcases the integration of voice processing models. It sets the groundwork for multilingual support, smarter response logic, and potential integration with web or mobile interfaces in future iterations.</p>
+            <h4>5. 🚀 Future Developments</h4>
+            <p> To enhance the effectiveness and cultural relevance of ScamCallBot, several advancements are planned</p>
+
+            <ul>
+                <li><strong>Fine-Tuning Whisper for Indian Languages</strong></li>
+                <p>While Whisper provides robust multilingual support, its performance in Indian languages can be improved. Fine-tuning Whisper on datasets like the IndicWhisper project, which includes over 10,000 hours of speech data across 12 Indian languages, has shown significant improvements in transcription accuracy .​
+                Additionally, techniques such as prompt-tuning with language family information and the introduction of novel tokenizers have been proposed to enhance Whisper's performance in Indian languages .​</p>
+                <li><strong>Fine-Tuning Llama Model for Indian Language Responses</strong></li>
+                <p>The current model, 'gemma3:1b', can be fine-tuned to better understand and generate responses in Indian languages. For instance, fine-tuning Llama 3 on datasets like hind_encorp, which contains English-Hindi sentence pairs, can improve the model's ability to generate contextually appropriate responses in Hindi .​
+                    
+                    
+                    Moreover, the use of parameter-efficient fine-tuning methods like QLoRA has been shown to enhance performance in Indian languages while maintaining efficiency .​</p>
+                <li><strong>Expansion of Language Support</strong></li>
+                <p>To cater to a broader audience, ScamCallBot plans to support additional Indian languages such as Marathi, Gujarati, Tamil, and Bengali. This expansion will involve creating language-specific datasets and fine-tuning strategies to maintain semantic and contextual accuracy .</p>
+                <li><strong>Real-Time Adaptation and Learning</strong></li>
+                <p>
+                    Implementing real-time adaptation techniques will allow ScamCallBot to learn from interactions and improve its responses over time. This continuous learning approach will help the bot stay relevant and effective in engaging with evolving scam tactics.​
+                    
+                    By focusing on these developments, ScamCallBot aims to become a more effective tool in combating scam calls, providing a culturally relevant and engaging experience for users across India.</p>
+
+                    
+
+
+                
+            </ul>
+
+        </div>
+    </div>
+</div>
 
 
 
@@ -329,7 +415,7 @@
 
     <!-- Footer -->
     <footer class="text-center py-4">
-        <p>&copy; 2024 Akhil Prakash Shenvi Sangaonkar</p>
+        <p>&copy; 2025 Akhil Prakash Shenvi Sangaonkar</p>
     </footer>
 
     <!-- Bootstrap JS -->

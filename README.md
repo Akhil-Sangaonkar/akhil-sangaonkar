@@ -1,7 +1,8 @@
 # 👋 Hi, I'm Akhil Sangaonkar
 
-🎓 M.Tech in Aerospace Engineering (IIT Madras) | MSc in Computational Statistics & Machine Learning (UCL)  
-📸 Passionate landscape photographer
+🎓 MSc in Computational Statistics & Machine Learning (UCL) | M.Tech in Aerospace Engineering (IIT Madras) 
+💼 Data Scientist | ML Engineer | Photographer  
+
 
 ---
 
@@ -10,6 +11,18 @@
 - 💼 [LinkedIn](https://www.linkedin.com/in/akhilsangaonkar/)  
 - 📷 [Flickr](https://www.flickr.com/people/your-flickr/)  
 - 📸 [500px](https://500px.com/your-500px/)  
+
+---
+
+
+
+
+
+### 📌 Connect with me
+- 🌐 [Website](https://akhil-sangaonkar.github.io/akhil-sangaonkar/)  
+- 💼 [LinkedIn](www.linkedin.com/in/akhil-sangaonkar-276956188)  
+- 📷 [Flickr](https://www.flickr.com/people/your-flickr/](https://www.flickr.com/photos/akhil_sangaonkar/))  
+- 📸 [500px](https://500px.com/your-500px/](https://500px.com/p/AkhilSangaonkar))  
 
 ---
 

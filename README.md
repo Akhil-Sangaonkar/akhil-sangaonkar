@@ -1,6 +1,7 @@
 # 👋 Hi, I'm Akhil Sangaonkar
 
 🎓 MSc in Computational Statistics & Machine Learning (UCL) | M.Tech in Aerospace Engineering (IIT Madras) 
+
 💼 Data Scientist | ML Engineer | Photographer  
 
 

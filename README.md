@@ -6,17 +6,6 @@
 
 ---
 
-### 📌 Connect with me
-- 🌐 [Website](https://your-website.com)  
-- 💼 [LinkedIn](https://www.linkedin.com/in/akhilsangaonkar/)  
-- 📷 [Flickr](https://www.flickr.com/people/your-flickr/)  
-- 📸 [500px](https://500px.com/your-500px/)  
-
----
-
-
-
-
 
 ### 📌 Connect with me
 - 🌐 [Website](https://akhil-sangaonkar.github.io/akhil-sangaonkar/)  

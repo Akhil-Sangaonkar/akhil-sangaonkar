@@ -4,7 +4,7 @@
 
 💼 Data Scientist | ML Engineer | Photographer  
 
-Hi, I'm Akhil Sangaonkar — a Data Scientist, ML Engineer, and Photographer with an M.Tech in Aerospace Engineering from IIT Madras and an MSc in Computational Statistics & Machine Learning from UCL. I combine data science expertise with a passion for landscape photography to tell stories through numbers and images.
+Hi, I'm Akhil Sangaonkar — a Data Scientist, ML Engineer and Photographer with an M.Tech in Aerospace Engineering from IIT Madras and an MSc in Computational Statistics & Machine Learning from UCL. I combine data science expertise with a passion for landscape photography to tell stories through numbers and images.
 
 
 ---
